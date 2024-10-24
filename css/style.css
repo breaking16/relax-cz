@@ -8,7 +8,7 @@ body {
 
 /*************************************/
 [class*="__container"] {
-  max-width: 1024px;
+  max-width: 1054px;
   padding-inline: 15px;
   margin: 0px auto;
 }
@@ -85,6 +85,12 @@ body {
 
   .header-block__text {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .header-block__title {
+    font-size: 32px;
   }
 }
 
@@ -366,7 +372,7 @@ body {
 
 .amenities__header {}
 
-.amenities__header:hover {
+.amenities__header:not(first-child) {
   margin-bottom: 64px;
 }
 
@@ -394,19 +400,50 @@ body {
 .section-amenities__items {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 4%;
+  gap: 15px;
 }
 
-.section-amenities__item {}
+.section-amenities__item {
+  border-radius: 4px;
+  overflow: hidden;
+  flex-basis: 291px;
+}
+
+.section-amenities__item:nth-child(6n + 3),
+.section-amenities__item:nth-child(6n + 4) {
+  flex-basis: 408px;
+}
+
+.section-amenities__item:nth-child(6n + 3) .section-amenities__link,
+.section-amenities__item:nth-child(6n + 4) .section-amenities__link {
+  aspect-ratio: 408 / 286;
+}
+
+@media (any-hover: hover) {
+  .section-amenities__item:hover .section-amenities__image {
+    transform: scale(1.1);
+  }
+}
 
 .section-amenities__link {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  text-align: center;
+  padding: 20px;
   aspect-ratio: 291 / 286;
+}
+
+.section-amenities__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.2;
 }
 
 .section-amenities__label {
@@ -417,13 +454,33 @@ body {
   font-weight: 600;
   letter-spacing: 4.2px;
   font-size: 28px;
+  line-height: 1.2;
 }
 
 .section-amenities__image {
   position: absolute;
+  transition: all 0.5s;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .section-amenities__items {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .amenities__header:not(first-child) {
+    margin-bottom: 32px;
+  }
+
+  .amenities__section:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+
 }
