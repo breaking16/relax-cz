@@ -14,12 +14,15 @@ body {
 }
 
 /*************************************/
-[class*="page__"] {
+[class*="page__"],
+.footer {
   padding-block: 64px;
 }
 
 @media (max-width: 767.98px) {
-  [class*="page__"] {
+
+  [class*="page__"],
+  .footer {
     padding-block: 32px;
   }
 }
@@ -313,7 +316,8 @@ body {
 
 @media (any-hover: hover) {
   .activities__link:hover {
-    border-bottom: 1px solid rgb(84, 70, 44);
+    border-bottom: 1px solid rgb(0, 0, 0);
+
   }
 }
 
@@ -481,6 +485,141 @@ body {
   .amenities__section:not(:last-child) {
     margin-bottom: 32px;
   }
+}
 
+/*======================================================CONTACTS*/
+.page__contacts {}
 
+.contacts {
+  background: rgb(244, 244, 244);
+}
+
+.contacts__container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.contacts__header {}
+
+.contacts__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.contacts__item {}
+
+.contacts__link {
+  letter-spacing: 0.8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contacts__link--phone {}
+
+.contacts__link--phone::before {
+  content: url(../img/contacts/phone.svg);
+
+}
+
+.contacts__link--mail {}
+
+.contacts__link--mail::before {
+  content: url(../img/contacts/mail.svg);
+
+}
+
+.contacts__link--map {}
+
+.contacts__link--map::before {
+  content: url(../img/contacts/map.svg);
+
+}
+
+.contacts__social {}
+
+@media (any-hover: hover) {
+  .contacts__link:hover {
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contacts__container {
+    gap: 32px;
+  }
+
+  .contacts__items {
+    gap: 15px;
+  }
+}
+
+/*************************************/
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  row-gap: 16px;
+}
+
+.social__item {}
+
+/*************************************/
+
+/*======================================================FOOTER*/
+.footer {}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  letter-spacing: 0.8px;
+}
+
+.footer__social {}
+
+.social {}
+
+.social__item {}
+
+.footer__text {
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (any-hover: hover) {
+  .footer__text a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .footer__copy a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.footer__copy {
+  text-align: center;
+}
+
+.footer__copy p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.footer__copy a {
+  font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+  .footer__container {
+    gap: 32px;
+  }
 }
